@@ -33,6 +33,7 @@ class EcommerceAPI{
         $sql = "CREATE TABLE $table_name (
             id mediumint(9) NOT NULL AUTO_INCREMENT,
             name varchar(255) NOT NULL,
+            description varchar(255) NOT NULL,
             price varchar(255) NOT NULL,
             PRIMARY KEY (id)
         ) $charset_collate;";
@@ -49,5 +50,5 @@ add_action('rest_api_init', 'register_routes');
 
 function register_routes(){
     $productsRoutes = new ProductsRoutes();
-    $productsRoutes->register_products();
+    $productsRoutes->products_routes();
 }

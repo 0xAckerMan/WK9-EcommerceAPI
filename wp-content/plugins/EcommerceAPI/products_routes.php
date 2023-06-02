@@ -1,10 +1,7 @@
 <?php
 //creating the products rest routes
 class ProductsRoutes{
-    public function register_products(){
-        add_action('rest_api_init', array($this, 'products_routes'));
-    }
-    
+   
     //function to create the products routes
     public function products_routes(){
 
@@ -52,6 +49,7 @@ class ProductsRoutes{
         $table_name = $wpdb->prefix . 'products';
         $wpdb->insert($table_name, array(
             'name' => $request['name'],
+            'description' => $request['description'],
             'price' => $request['price']
         ));
         return 'Product created';
@@ -62,6 +60,7 @@ class ProductsRoutes{
         $table_name = $wpdb->prefix . 'products';
         $wpdb->update($table_name, array(
             'name' => $request['name'],
+            'description' => $request['description'],
             'price' => $request['price']
         ), array(
             'id' => $request['id']
