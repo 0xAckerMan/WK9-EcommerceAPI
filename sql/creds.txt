@@ -1,0 +1,10 @@
+DB Name: assessment9
+DB user: admin
+DB pass: admin
+
+
+
+Site title: assessment9
+    user: admin
+    pass: admin
+    email: admin@localhost.com
